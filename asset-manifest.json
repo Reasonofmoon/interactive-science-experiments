@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/interactive-science-experiments/static/css/main.3bc906d2.css",
+    "main.js": "/interactive-science-experiments/static/js/main.1d30c928.js",
+    "static/js/453.9f2b356e.chunk.js": "/interactive-science-experiments/static/js/453.9f2b356e.chunk.js",
+    "index.html": "/interactive-science-experiments/index.html",
+    "main.3bc906d2.css.map": "/interactive-science-experiments/static/css/main.3bc906d2.css.map",
+    "main.1d30c928.js.map": "/interactive-science-experiments/static/js/main.1d30c928.js.map",
+    "453.9f2b356e.chunk.js.map": "/interactive-science-experiments/static/js/453.9f2b356e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3bc906d2.css",
+    "static/js/main.1d30c928.js"
+  ]
+}
