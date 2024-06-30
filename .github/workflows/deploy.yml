@@ -3,32 +3,32 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # 메인 브랜치에 푸시될 때 실행
-  workflow_dispatch:  # 수동으로 워크플로우를 실행할 수 있게 함
+      - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3  # v3로 업데이트
+      - name: Checkout
+        uses: actions/checkout@v4  # v3에서 v4로 업데이트
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3  # v3로 업데이트
-      with:
-        node-version: '16'  # Node.js 버전을 16으로 업데이트
+      - name: Set up Node.js
+        uses: actions/setup-node@v4  # v3에서 v4로 업데이트
+        with:
+          node-version: '20'  # '16'에서 '20'으로 업데이트
 
-    - name: Install dependencies
-      run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-    - name: Build
-      run: |
-        npm run build
-        cp build/index.html build/404.html  # GitHub Pages에서 클라이언트 사이드 라우팅을 위해
+      - name: Build
+        run: |
+          npm run build
+          cp build/index.html build/404.html
 
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@v4  # 최신 버전 사용
-      with:
-        branch: gh-pages  # 배포될 브랜치
-        folder: build  # 배포할 폴더 (React 빌드 출력 폴더)
-        clean: true  # 기존 파일 정리
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: build
+          clean: true
